@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier du Pavé | Artesanalmente doce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#2b1613",
+                    "tertiary-fixed": "#ffdcbd",
+                    "on-secondary-fixed": "#2c160d",
+                    "chocolate-dark": "#2D1D1B",
+                    "on-secondary-container": "#795a4d",
+                    "tertiary-fixed-dim": "#e1c1a2",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#5b403c",
+                    "on-secondary-fixed-variant": "#5c4035",
+                    "primary": "#321c19",
+                    "surface-dim": "#ded9d4",
+                    "surface-variant": "#e6e2dc",
+                    "caramel-rich": "#B58463",
+                    "cream-vanilla": "#FDFBF7",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f2ede7",
+                    "on-surface-variant": "#504442",
+                    "on-secondary": "#ffffff",
+                    "background": "#fef9f3",
+                    "surface": "#fef9f3",
+                    "pistachio-accent": "#A3B18A",
+                    "primary-fixed": "#ffdad4",
+                    "on-tertiary-container": "#b99b7e",
+                    "secondary-container": "#fed4c4",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1d1b18",
+                    "primary-container": "#4a312d",
+                    "outline-variant": "#d4c3c0",
+                    "surface-container-high": "#ece7e2",
+                    "primary-fixed-dim": "#e4beb8",
+                    "outline": "#827472",
+                    "on-surface": "#1d1b18",
+                    "inverse-primary": "#e4beb8",
+                    "inverse-on-surface": "#f5f0ea",
+                    "surface-container-low": "#f8f3ed",
+                    "surface-container-highest": "#e6e2dc",
+                    "secondary": "#76574b",
+                    "on-primary-container": "#bb9893",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#301e0a",
+                    "secondary-fixed-dim": "#e6beaf",
+                    "on-tertiary-fixed": "#291805",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#48331d",
+                    "surface-bright": "#fef9f3",
+                    "inverse-surface": "#32302c",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#755753",
+                    "on-tertiary-fixed-variant": "#59422b",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "16px",
+                    "xl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Outfit"],
+                    "label-sm": ["Outfit"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Outfit"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-subtle {
+            text-shadow: 0 2px 4px rgba(45, 29, 27, 0.1);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background/80 backdrop-blur-md flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl cursor-pointer hover:opacity-80 transition-opacity">menu</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight md:font-display-lg md:text-display-lg">Atelier du Pavé</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold hover:opacity-80 transition-opacity" href="#">Início</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity" href="#historia">Nossa História</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity" href="#favoritos">Favoritos</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity" href="#">Contato</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary text-2xl hover:opacity-80 transition-opacity active:scale-95 transition-transform">shopping_bag</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[90vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-detail macro shot of a traditional Brazilian Pavé dessert. Layers of creamy vanilla custard, chocolate ganache, and artisanal champagne biscuits are visible, with cocoa powder dusted on top. The lighting is warm and golden, reminiscent of a high-end French pâtisserie. The color palette features rich dark chocolate browns, golden caramels, and soft creams, creating a luxurious and indulgent mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcfdJu2wOmSHf1YlePWQEUAbrT0oB34E97qRxHdSYt1w0-gqJM8I7BGvkZQF1RxpmNnXPvR7HIrE264R6tmZOcJpcV4G6CmF1ddB4qDXUkeS5nAjiL0u3x7FW30pZ618ipYUs1dGcEIZ5Sd7MUG-lpXS8AYu5UNwE11a-IsqQd4ea17Bzi8r4EZm0A6J7AEXlNavwdMnshuNqT4R7JBtnoNLuFrZ0QOHBFLookqXOt46SgTKN-MxZ_"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="max-w-2xl animate-fade-in">
+<span class="text-caramel-rich font-label-md tracking-widest mb-4 block">TRADIÇÃO &amp; REQUINTE</span>
+<h2 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">A Arte do Pavê Artesanal</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        Descubra camadas de história e sabor em cada colherada. Pavês feitos à mão com ingredientes premium e o tempo que a excelência exige.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary px-8 py-4 rounded-lg font-label-md hover:bg-primary transition-all shadow-lg active:scale-95">
+                            Ver Cardápio Online
+                        </button>
+<button class="border-2 border-caramel-rich text-caramel-rich px-8 py-4 rounded-lg font-label-md hover:bg-caramel-rich hover:text-white transition-all active:scale-95">
+                            Nossa Unidades
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Our Philosophy (Implicit Nossa História entry) -->
+<section class="py-24 bg-surface-container-low" id="historia">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+<div class="md:col-span-7 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Uma História que se Camufla em Sabor</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                            O Atelier du Pavé nasceu do desejo de elevar o clássico pavê brasileiro ao patamar da alta confeitaria internacional. O que começou em uma pequena cozinha familiar, com receitas passadas por gerações, transformou-se em um refúgio para amantes de doces que buscam mais do que apenas açúcar: buscam uma experiência sensorial.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                            Nossa técnica artesanal respeita o tempo de descanso de cada camada, garantindo que o creme de baunilha, o chocolate belga e as frutas frescas se fundam em uma harmonia perfeita. No Atelier, cada pavê é uma obra única, montada à mão com o cuidado de um artesão.
+                        </p>
+<div class="flex items-center gap-6">
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-4 border-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling master pastry chef, a woman in her 50s with a warm and welcoming expression, wearing a clean white chef's coat with chocolate-colored embroidery. The background is a soft-focus artisanal kitchen with copper pots and warm lighting, creating a trustworthy and premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT_PpVEZQQgTo9r9GfBSSoaPX1T6c7TLXOIsg2JO7G9lg7-n-s3MZ4s1zuTxAyyA6aD1taf-UoL9qn8UvmsHM6AqtuJwdT5eAhWGDzRDpV3kiCqlUYqtmRnCRGR1xaKXNeSFJtxqAY7qu5cQ7u-pK4nUKld5F526lvJeklox5EC0Gln0rWohqUy32s4LdjUtWisX6zdnt4ciuRZITyiPucFAnzMtBwcU8rWY02oOK5XVRNn0e26nBr"/>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-background overflow-hidden bg-caramel-rich flex items-center justify-center text-white">
+<span class="material-symbols-outlined">star</span>
+</div>
+</div>
+<p class="text-sm italic text-on-surface-variant">"O segredo está no silêncio entre as camadas." — Chef Fundadora</p>
+</div>
+</div>
+<div class="md:col-span-5 grid grid-cols-2 gap-4">
+<div class="rounded-xl overflow-hidden shadow-xl transform translate-y-8">
+<img class="w-full h-full object-cover" data-alt="Macro photography of artisanal vanilla beans and high-quality dark chocolate pieces resting on a marble countertop. Natural, soft morning light hits the textures of the ingredients. The aesthetic is clean, luxurious, and organic, emphasizing the premium quality of the raw materials used in the atelier." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEYhqfcCXnRvL3rQ9-0jOgcxXmNJmr29Z_ZxjRWE_SwsHZDtCM9JvABGdGEz-FlunVvV8QeXm1BoYFZgdQm5S4ffB32BhLQfknIRNeC5ank0spnI0ckPW2CnsNL49WlEMsQhge6Cp5rdxkRuCp4IWd2csUyyoCcGRv6JPkrtBy7zvZfmGr64cprSDj-sx4QryUJD07CvsFyasM7KlYhfENS96I8cghYvChNxiMvpFX_LmoF5PM8oX_"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a hand gently sifting fine cocoa powder over a perfectly layered pavé dessert. The motion is captured with a slight blur, suggesting artisanal action. The scene is set in a warm, rustic-modern kitchen with soft brown and cream tones, emphasizing the 'handcrafted' aspect of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGNr1zUJJVWB4_lKhpOC1QBDgDFTdZ9MMugYdtw_tN-JSGLSNLvm4BtM9ZAlliX83qy6aPSzhaLLPYCLuvFff8QR2wOl21NzV1sdCFMwMaJcsXHoNDptcwYniAPKip3Vi4QCMZs8sK6-ToKYaG3hu3wyssPzwt-gJjAW9YDRyZXiqxZ50cOTws1dxZTnncfGS9Q-gd17KBZ8cBm1BdDN9Pb2skAKQU6DmEtXIDk0qzqGzQKt8t6HnX"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlights: Nossos Favoritos -->
+<section class="py-24" id="favoritos">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Nossos Favoritos</h3>
+<p class="text-on-surface-variant font-body-md">As criações mais amadas por nossos clientes.</p>
+</div>
+<a class="text-caramel-rich font-label-md flex items-center gap-2 hover:underline transition-all" href="#">
+                        Explorar todo o cardápio
+                        <span class="material-symbols-outlined">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Product 1 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(74,49,45,0.04)] hover:shadow-[0_20px_40px_rgba(74,49,45,0.08)] transition-all duration-500 hover:-translate-y-2">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A gourmet 'Classic Pavé' served in a minimalist glass bowl. It shows distinct layers of pale yellow custard, coffee-soaked biscuits, and a thick layer of dark chocolate ganache. The top is decorated with a single gold leaf flake. Professional studio lighting with a warm, cream-colored background, embodying handcrafted luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHk8ztEcJNQ87pBZGtp00zLjaMCEo_UIdMqiClLMWjZHkgGFl7c5ijG8ARRu9bB0eCB0BS07cDV2YjHNXt0YcdO35aLxnYd9oz70I5bsx8R1zwl1-rJ3bNYVuki3DgLR9bQE71usRnJl01YKQv-fEui_mxOX-s0fsKJ48yQ8ldsTynqtZszFw0UQzEFm8ZKCeQxufO-I72fhp8S-FmiPZcALT8k1cIBvQHm2eSO00xdDQs7wmecziC"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary">BEST SELLER</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Pavé Clássico d'Or</h4>
+<p class="text-on-surface-variant font-body-md mb-6">Nossa receita original com biscoito champanhe artesanal e creme de baunilha bourbon.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold text-xl">R$ 28,00</span>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(74,49,45,0.04)] hover:shadow-[0_20px_40px_rgba(74,49,45,0.08)] transition-all duration-500 hover:-translate-y-2">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A modern 'Pistachio and Raspberry Pavé'. It features vibrant green pistachio cream layers alternating with bright red raspberry coulis and delicate white sponge cake. Topped with crushed roasted pistachios. The shot is high-contrast and vivid, emphasizing freshness and sophisticated flavor pairings. Set against a soft cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9vsf531bvaBjn24uOCyb9Mqppzliw8CiIdc-tRS5ychyKuNAxfrJHUmPnQGOszr1d_RyRuEoHMHnrEc4cmYZwhzilfG4mSQmuJ31ryonJEMylHF-YsM57--e9NmGd4bLI-OvPkAx0hq_cxupIIC1O3PkyM8OSIxdqiTGlQcP2aGOF5Cnhz1W8bh2RZqj7w37KyuF1lWgjjtl0UT8lmGqSirkyIPId_ennO014eJuVgxRqSk4aQuBf"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Pistache &amp; Frutas Vermelhas</h4>
+<p class="text-on-surface-variant font-body-md mb-6">Creme de pistache iraniano equilibrado com a acidez natural das framboesas frescas.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold text-xl">R$ 34,00</span>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(74,49,45,0.04)] hover:shadow-[0_20px_40px_rgba(74,49,45,0.08)] transition-all duration-500 hover:-translate-y-2">
+<div class="h-80 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A decadent 'Salted Caramel and Pecan Pavé'. Featuring layers of rich, flowing salted caramel, dark chocolate mousse, and crunchy candied pecans. The textures are emphasized through macro photography. Warm, dark lighting with hints of golden highlights. The aesthetic is incredibly indulgent and cozy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSN7mtwt95jszOSqANR-CNhcCOmRh9FMJ9_YP4miMRYT37SVdLxn9mhrb9AYgHhpJy8trbng31gVnilajE6Snm5V0OQ9bhOZjkbSt4JO5Mkbq-egy5V4RiT8G6qiecd0MY2VjD2z0kDOHP3-gNX8Jczi0qLAaDv43dn3emB_4of4oHnwR7mAsKNtPk0QG7vr-Gy09vKrqVVAkN1pSiOG2cXxMGegRoMUCI5QQndGAtu88Jx0Db2spM"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Caramelo Salgado &amp; Pecan</h4>
+<p class="text-on-surface-variant font-body-md mb-6">Para os amantes de sabores intensos. Caramelo toffee com flor de sal e nozes crocantes.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold text-xl">R$ 32,00</span>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Micro-Interaction Section: The Sensation -->
+<section class="py-24 bg-chocolate-dark text-cream-vanilla overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 flex flex-col md:flex-row items-center gap-16">
+<div class="md:w-1/2">
+<h3 class="font-display-lg text-display-lg mb-8">A Experiência do Atelier</h3>
+<div class="space-y-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-caramel-rich text-3xl">eco</span>
+<div>
+<h5 class="font-bold text-xl mb-2">Ingredientes Conscientes</h5>
+<p class="opacity-80">Trabalhamos apenas com produtores locais e cacau sustentável de origem controlada.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-caramel-rich text-3xl">timer</span>
+<div>
+<h5 class="font-bold text-xl mb-2">Paciência Artesanal</h5>
+<p class="opacity-80">Nossos doces levam até 24 horas de preparo para atingir a textura perfeita.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-caramel-rich text-3xl">workspace_premium</span>
+<div>
+<h5 class="font-bold text-xl mb-2">Exclusividade</h5>
+<p class="opacity-80">Lotes limitados produzidos diariamente para garantir o frescor absoluto.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 relative">
+<div class="aspect-square rounded-full border-2 border-caramel-rich/30 p-8 animate-spin-slow">
+<img class="w-full h-full object-cover rounded-full" data-alt="A top-down view of a beautifully packaged gift box from Atelier du Pavé. The box is a deep chocolate brown with minimalist gold foil branding. Inside, several miniature pavés are arranged elegantly. The setting is a clean, bright, and expensive-looking marble table. This image highlights the brand's premium positioning as a gift-worthy luxury item." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABh9hBa0R097RmszdJD8sMLqJ3buEvDXy-DPNz8h-ZBoCN8g6eqqRhqUjraipgMm3f-dPXuB1HUHOYLrx69qGI2FSGtVpOfjf8q2iSWemT6HEtAQ9shuDdwqp2E9f0j4q_zO_V0z0XfVYU8Ww9fHoyYBKGFIwN3QditlHPC98fw_aFroRAscIembpcygih3Tv68ZogDzLTP9Mw_AVa1_nv7UFjPX2dt9h39uZDwCDr1HLHebgz9yI4"/>
+</div>
+<div class="absolute -bottom-10 -left-10 glass-card p-6 rounded-xl shadow-2xl max-w-[200px]">
+<p class="text-primary text-sm font-bold">"O melhor pavê que já provei na vida. A textura é indescritível."</p>
+<p class="text-caramel-rich text-xs mt-2">— Mariana S., Crítica Gastronômica</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-chocolate-dark text-cream-vanilla w-full py-16 px-margin-mobile md:px-margin-desktop flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<h2 class="font-display-lg text-display-lg text-cream-vanilla mb-4">Atelier du Pavé</h2>
+<p class="opacity-70 font-body-md mb-6">Artesanalmente doce. Transformando tradição em momentos de luxo e prazer.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-cream-vanilla/20 flex items-center justify-center hover:bg-caramel-rich transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">camera</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-cream-vanilla/20 flex items-center justify-center hover:bg-caramel-rich transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-cream-vanilla/20 flex items-center justify-center hover:bg-caramel-rich transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-caramel-rich">Navegação</h4>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Nossa História</a>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Cardápio</a>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Favoritos</a>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Lojas</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-caramel-rich">Institucional</h4>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Privacidade</a>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Termos</a>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Trabalhe Conosco</a>
+<a class="opacity-80 hover:text-caramel-rich transition-colors" href="#">Franquias</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-caramel-rich">Contato</h4>
+<span class="opacity-80 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">call</span>
+                        (11) 9999-9999
+                    </span>
+<span class="opacity-80 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+                        contato@atelierdupave.com.br
+                    </span>
+<span class="opacity-80 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        São Paulo, SP
+                    </span>
+</div>
+</div>
+</div>
+<div class="pt-12 border-t border-cream-vanilla/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
+<p>© 2024 Atelier du Pavé. Artesanalmente doce.</p>
+<p>Desenvolvido com sofisticação.</p>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation (Only visible on mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-surface-container shadow-[0_-4px_20px_0_rgba(74,49,45,0.06)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-label-sm text-[10px]">Cardápio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm text-[10px]">Favoritos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-sm text-[10px]">Pedidos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-[10px]">Perfil</span>
+</a>
+</nav>
+<script>
+        // Simple parallax or reveal effects
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    section.classList.add('opacity-100');
+                }
+            });
+        });
+
+        // Toggle mobile menu visibility (for top bar icon)
+        const menuIcon = document.querySelector('header span.material-symbols-outlined:first-child');
+        menuIcon.addEventListener('click', () => {
+            alert('Menu lateral em desenvolvimento para oferecer a melhor experiência.');
+        });
+    </script>
+<style>
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 60s linear infinite;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body></html>

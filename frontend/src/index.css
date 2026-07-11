@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #321c19;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #4a312d;
+  --color-on-primary-container: #bb9893;
+  --color-secondary: #76574b;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed4c4;
+  --color-on-secondary-container: #795a4d;
+  --color-tertiary: #301e0a;
+  --color-tertiary-container: #48331d;
+  --color-on-tertiary-container: #b99b7e;
+  --color-background: #fef9f3;
+  --color-on-background: #1d1b18;
+  --color-surface: #fef9f3;
+  --color-on-surface: #1d1b18;
+  --color-on-surface-variant: #504442;
+  --color-surface-dim: #ded9d4;
+  --color-surface-variant: #e6e2dc;
+  --color-surface-container: #f2ede7;
+  --color-surface-container-low: #f8f3ed;
+  --color-surface-container-high: #ece7e2;
+  --color-surface-container-highest: #e6e2dc;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline: #827472;
+  --color-outline-variant: #d4c3c0;
+  --color-chocolate-dark: #2D1D1B;
+  --color-caramel-rich: #B58463;
+  --color-cream-vanilla: #FDFBF7;
+  --color-pistachio-accent: #A3B18A;
+  --color-error: #ba1a1a;
+
+  --font-display-lg: "Playfair Display", serif;
+  --font-body-lg: "Outfit", sans-serif;
+  --font-headline-md: "Playfair Display", serif;
+  --font-headline-sm: "Playfair Display", serif;
+  --font-body-md: "Outfit", sans-serif;
+  --font-label-sm: "Outfit", sans-serif;
+  --font-display-lg-mobile: "Playfair Display", serif;
+  --font-label-md: "Outfit", sans-serif;
+
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg-mobile: 36px;
+  --text-display-lg-mobile--line-height: 44px;
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 40px;
+  --text-headline-sm: 24px;
+  --text-headline-sm--line-height: 32px;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 64px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --animate-spin-slow: spin-slow 60s linear infinite;
+  --animate-fade-in: fade-in 1.2s ease-out forwards;
+  --animate-slide-up: slide-up 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body-md antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+  }
+  .material-symbols-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .card-shadow {
+    box-shadow: 0 10px 30px rgba(74, 49, 45, 0.04);
+  }
+  .checkout-card {
+    box-shadow: 0 10px 30px -5px rgba(74, 49, 45, 0.04);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .transition-soft {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .px-margin-mobile { padding-left: var(--spacing-margin-mobile); padding-right: var(--spacing-margin-mobile); }
+  .md\:px-margin-desktop { @media (width >= 48rem) { padding-left: var(--spacing-margin-desktop); padding-right: var(--spacing-margin-desktop); } }
+  .max-w-container-max { max-width: var(--spacing-container-max); }
+  .gap-gutter { gap: var(--spacing-gutter); }
+  .font-display-lg { font-family: var(--font-display-lg); }
+  .font-display-lg-mobile { font-family: var(--font-display-lg-mobile); }
+  .font-headline-md { font-family: var(--font-headline-md); }
+  .font-headline-sm { font-family: var(--font-headline-sm); }
+  .font-body-lg { font-family: var(--font-body-lg); }
+  .font-body-md { font-family: var(--font-body-md); }
+  .font-label-md { font-family: var(--font-label-md); letter-spacing: 0.05em; }
+  .font-label-sm { font-family: var(--font-label-sm); }
+  .text-display-lg { font-size: var(--text-display-lg); line-height: var(--text-display-lg--line-height); font-weight: 700; letter-spacing: -0.02em; }
+  .text-display-lg-mobile { font-size: var(--text-display-lg-mobile); line-height: var(--text-display-lg-mobile--line-height); font-weight: 700; }
+  .text-headline-md { font-size: var(--text-headline-md); line-height: var(--text-headline-md--line-height); font-weight: 600; }
+  .text-headline-sm { font-size: var(--text-headline-sm); line-height: var(--text-headline-sm--line-height); font-weight: 600; }
+  .text-body-lg { font-size: var(--text-body-lg); line-height: var(--text-body-lg--line-height); }
+  .text-body-md { font-size: var(--text-body-md); line-height: var(--text-body-md--line-height); }
+  .text-label-md { font-size: var(--text-label-md); line-height: var(--text-label-md--line-height); font-weight: 600; }
+  .text-label-sm { font-size: var(--text-label-sm); line-height: var(--text-label-sm--line-height); font-weight: 500; }
+}

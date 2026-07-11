@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detalhes do Produto | Atelier du Pavé</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#2b1613",
+                    "tertiary-fixed": "#ffdcbd",
+                    "on-secondary-fixed": "#2c160d",
+                    "chocolate-dark": "#2D1D1B",
+                    "on-secondary-container": "#795a4d",
+                    "tertiary-fixed-dim": "#e1c1a2",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#5b403c",
+                    "on-secondary-fixed-variant": "#5c4035",
+                    "primary": "#321c19",
+                    "surface-dim": "#ded9d4",
+                    "surface-variant": "#e6e2dc",
+                    "caramel-rich": "#B58463",
+                    "cream-vanilla": "#FDFBF7",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f2ede7",
+                    "on-surface-variant": "#504442",
+                    "on-secondary": "#ffffff",
+                    "background": "#fef9f3",
+                    "surface": "#fef9f3",
+                    "pistachio-accent": "#A3B18A",
+                    "primary-fixed": "#ffdad4",
+                    "on-tertiary-container": "#b99b7e",
+                    "secondary-container": "#fed4c4",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1d1b18",
+                    "primary-container": "#4a312d",
+                    "outline-variant": "#d4c3c0",
+                    "surface-container-high": "#ece7e2",
+                    "primary-fixed-dim": "#e4beb8",
+                    "outline": "#827472",
+                    "on-surface": "#1d1b18",
+                    "inverse-primary": "#e4beb8",
+                    "inverse-on-surface": "#f5f0ea",
+                    "surface-container-low": "#f8f3ed",
+                    "surface-container-highest": "#e6e2dc",
+                    "secondary": "#76574b",
+                    "on-primary-container": "#bb9893",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#301e0a",
+                    "secondary-fixed-dim": "#e6beaf",
+                    "on-tertiary-fixed": "#291805",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#48331d",
+                    "surface-bright": "#fef9f3",
+                    "inverse-surface": "#32302c",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#755753",
+                    "on-tertiary-fixed-variant": "#59422b",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "16px",
+                    "xl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Outfit"],
+                    "label-sm": ["Outfit"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Outfit"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-scale:active { transform: scale(0.95); transition: transform 0.1s; }
+        .custom-shadow { box-shadow: 0 10px 30px rgba(74, 49, 45, 0.04); }
+        body { background-color: #fef9f3; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fef9f3; }
+        ::-webkit-scrollbar-thumb { background: #827472; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface selection:bg-caramel-rich/30">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<button class="text-primary hover:opacity-80 transition-opacity active-scale">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary tracking-tight">Atelier du Pavé</h1>
+<button class="text-primary hover:opacity-80 transition-opacity active-scale">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</button>
+</header>
+<main class="max-w-container-max mx-auto pb-32">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-mobile md:px-margin-desktop mt-8">
+<!-- Hero Image Section -->
+<div class="relative group overflow-hidden rounded-xl h-[400px] md:h-[600px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro photography shot of a gourmet chocolate pavé, featuring distinct layers of velvety dark chocolate ganache, creamy vanilla custard, and artisanal biscuit pieces. The top is dusted with fine cocoa and decorated with gold leaf flakes. The lighting is warm and cinematic, highlighting the silky textures and glossy finish against a neutral, high-end pâtisserie background with soft-focus kitchen elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8tuiphELWwwmV8A4zMO2aLjZ5GYbF27ED5vOagx4VJk261hxcWRs5S6y-iSW9x1bupnaNkAUycz7XCvyOh2OUAqhhF_TBhV6MaEP0VwjxkoDZH3qjJA68Rfwf2mWI69dy-XflrBIsstEVsvWGIqGEvtTTKGow4_SGaudeYWSwqYEkqKNh8UhLpdE5PNFFFtAyN2mLxSDo3cj2HXqJL6zyiQxgOQstVI_v5MjDH30eYKXS_9i1C0wQ"/>
+<div class="absolute top-4 right-4 bg-background/90 backdrop-blur-sm p-3 rounded-full custom-shadow cursor-pointer active-scale text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex flex-col space-y-8">
+<div>
+<span class="text-caramel-rich font-label-md uppercase tracking-widest mb-2 block">Destaque da Casa</span>
+<h2 class="font-display-lg text-primary mb-2">Pavé de Chocolate Belga</h2>
+<p class="text-primary text-headline-sm font-semibold">R$ 38,90</p>
+<p class="mt-6 text-on-surface-variant font-body-lg leading-relaxed">
+                        Nossa versão clássica e artesanal. Camadas intercaladas de biscoito amanteigado embebido em calda secreta, creme de chocolate belga 54% cacau e finalizado com uma generosa camada de ganache sedosa. Uma experiência sensorial inesquecível.
+                    </p>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Additionals -->
+<section>
+<h3 class="font-headline-sm text-primary mb-6">Personalize seu momento</h3>
+<div class="grid grid-cols-1 gap-4">
+<label class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-caramel-rich/30 cursor-pointer transition-all group">
+<div class="flex items-center gap-4">
+<input class="w-5 h-5 rounded text-primary-container focus:ring-primary-container border-outline" type="checkbox"/>
+<span class="font-body-md text-primary">Extra Nutella</span>
+</div>
+<span class="text-on-surface-variant font-label-md">+ R$ 6,00</span>
+</label>
+<label class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-caramel-rich/30 cursor-pointer transition-all group">
+<div class="flex items-center gap-4">
+<input class="w-5 h-5 rounded text-primary-container focus:ring-primary-container border-outline" type="checkbox"/>
+<span class="font-body-md text-primary">Morangos Frescos</span>
+</div>
+<span class="text-on-surface-variant font-label-md">+ R$ 4,50</span>
+</label>
+<label class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low border border-transparent hover:border-caramel-rich/30 cursor-pointer transition-all group">
+<div class="flex items-center gap-4">
+<input class="w-5 h-5 rounded text-primary-container focus:ring-primary-container border-outline" type="checkbox"/>
+<span class="font-body-md text-primary">Raspas de Chocolate Meio Amargo</span>
+</div>
+<span class="text-on-surface-variant font-label-md">+ R$ 3,00</span>
+</label>
+</div>
+</section>
+<!-- Observations -->
+<section>
+<h3 class="font-headline-sm text-primary mb-4">Observações</h3>
+<textarea class="w-full min-h-[100px] p-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-caramel-rich/20 placeholder:text-outline text-on-surface font-body-md resize-none" placeholder="Alguma restrição ou pedido especial? Escreva aqui..."></textarea>
+</section>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<footer class="fixed bottom-0 left-0 w-full bg-background/95 backdrop-blur-lg border-t border-outline-variant/10 px-margin-mobile md:px-margin-desktop py-6 z-50">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Quantity Selector -->
+<div class="flex items-center bg-surface-container-high rounded-full p-1 w-full md:w-auto">
+<button class="w-12 h-12 flex items-center justify-center text-primary active-scale hover:bg-surface-container-lowest rounded-full transition-colors" id="decrement">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="w-12 text-center font-display-md text-primary font-bold text-lg" id="quantity">1</span>
+<button class="w-12 h-12 flex items-center justify-center text-primary active-scale hover:bg-surface-container-lowest rounded-full transition-colors" id="increment">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- CTA Button -->
+<button class="w-full md:w-auto md:min-w-[320px] bg-primary-container text-on-primary py-4 px-10 rounded-lg font-body-lg font-semibold flex items-center justify-center gap-3 active-scale hover:bg-primary-container/90 shadow-lg shadow-primary-container/20 transition-all">
+<span>Adicionar ao Carrinho</span>
+<span class="opacity-40">•</span>
+<span>R$ 38,90</span>
+</button>
+</div>
+</footer>
+<script>
+        const quantityEl = document.getElementById('quantity');
+        let count = 1;
+
+        document.getElementById('increment').addEventListener('click', () => {
+            count++;
+            quantityEl.textContent = count;
+        });
+
+        document.getElementById('decrement').addEventListener('click', () => {
+            if (count > 1) {
+                count--;
+                quantityEl.textContent = count;
+            }
+        });
+
+        // Simple Intersection Observer for header animation
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>

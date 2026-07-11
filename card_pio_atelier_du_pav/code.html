@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#2b1613",
+                    "tertiary-fixed": "#ffdcbd",
+                    "on-secondary-fixed": "#2c160d",
+                    "chocolate-dark": "#2D1D1B",
+                    "on-secondary-container": "#795a4d",
+                    "tertiary-fixed-dim": "#e1c1a2",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#5b403c",
+                    "on-secondary-fixed-variant": "#5c4035",
+                    "primary": "#321c19",
+                    "surface-dim": "#ded9d4",
+                    "surface-variant": "#e6e2dc",
+                    "caramel-rich": "#B58463",
+                    "cream-vanilla": "#FDFBF7",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f2ede7",
+                    "on-surface-variant": "#504442",
+                    "on-secondary": "#ffffff",
+                    "background": "#fef9f3",
+                    "surface": "#fef9f3",
+                    "pistachio-accent": "#A3B18A",
+                    "primary-fixed": "#ffdad4",
+                    "on-tertiary-container": "#b99b7e",
+                    "secondary-container": "#fed4c4",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1d1b18",
+                    "primary-container": "#4a312d",
+                    "outline-variant": "#d4c3c0",
+                    "surface-container-high": "#ece7e2",
+                    "primary-fixed-dim": "#e4beb8",
+                    "outline": "#827472",
+                    "on-surface": "#1d1b18",
+                    "inverse-primary": "#e4beb8",
+                    "inverse-on-surface": "#f5f0ea",
+                    "surface-container-low": "#f8f3ed",
+                    "surface-container-highest": "#e6e2dc",
+                    "secondary": "#76574b",
+                    "on-primary-container": "#bb9893",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#301e0a",
+                    "secondary-fixed-dim": "#e6beaf",
+                    "on-tertiary-fixed": "#291805",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#48331d",
+                    "surface-bright": "#fef9f3",
+                    "inverse-surface": "#32302c",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#755753",
+                    "on-tertiary-fixed-variant": "#59422b",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "16px",
+                    "xl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Outfit"],
+                    "label-sm": ["Outfit"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Outfit"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(74, 49, 45, 0.04);
+        }
+
+        .active-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background-color: #4A312D;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-caramel-rich selection:text-white">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50 bg-background/80 backdrop-blur-md transition-all duration-300">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95" data-icon="menu">menu</button>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary tracking-tight">Atelier du Pavé</h1>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto pb-32">
+<!-- Search Bar Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-caramel-rich transition-colors" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl font-body-md text-on-surface placeholder:text-outline focus:ring-2 focus:ring-tertiary-container transition-all" placeholder="Encontre seu pavé favorito..." type="text"/>
+</div>
+</section>
+<!-- Categories Navigation (Tabs) -->
+<section class="px-margin-mobile md:px-margin-desktop mb-8">
+<div class="flex gap-8 overflow-x-auto no-scrollbar py-2 border-b border-surface-variant/30">
+<button class="relative font-label-md text-primary whitespace-nowrap active-tab">Doces</button>
+<button class="font-label-md text-on-surface-variant whitespace-nowrap hover:text-primary transition-colors">Porções</button>
+<button class="font-label-md text-on-surface-variant whitespace-nowrap hover:text-primary transition-colors">Opções</button>
+<button class="font-label-md text-on-surface-variant whitespace-nowrap hover:text-primary transition-colors">Sobremesas</button>
+<button class="font-label-md text-on-surface-variant whitespace-nowrap hover:text-primary transition-colors">Bebidas</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden card-shadow group hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-[4/3] w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, high-detail macro shot of a traditional Brazilian pavé dessert. Layers of creamy white chocolate mousse, dark chocolate ganache, and soaked ladyfinger biscuits are visible. The scene is lit with warm, soft afternoon sunlight, emphasizing the creamy and velvety textures. The background is a soft-focus artisanal kitchen counter in a warm cream palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVetiQBeCn35xj8dT4TdEmMYcUy8CZA0sca4YcKJ3zGkjRwRlWzxqouoQih0jLquCXnEyhqblt4MQI8UN2ozlmgWja2q8_v--Ar4Ai7zTb--W_ZZkmEb5O8w2SxZcNTj7sN0cjFYCAddKU9LZ0wgVsMyDWHdAIQJHDFNsKEo99U4UfaijFkrQ9sHD1NRlwU375trhfqcpXG7lEOJ_JarKrKKewgIstpVtQcASxFTd_sWoOUMhicAJU"/>
+<div class="absolute top-4 right-4 bg-pistachio-accent/90 text-white text-label-sm px-3 py-1 rounded-full backdrop-blur-sm">Mais Vendido</div>
+</div>
+<div class="p-6 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-sm text-primary">Pavé Clássico</h3>
+<span class="font-headline-sm text-caramel-rich">R$ 24,90</span>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Camadas de biscoito artesanal embebido em licor fino, creme de baunilha Bourbon e ganache belga.</p>
+<div class="flex justify-end mt-4">
+<button class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center hover:bg-primary transition-colors active:scale-90 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden card-shadow group hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-[4/3] w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious dark chocolate and pistachio pavé dessert captured in a top-down artistic angle. Rich, dark brown chocolate layers contrast with vibrant green crushed pistachios sprinkled on top. The lighting is elegant and directional, casting soft shadows that highlight the handcrafted nature of the dessert. The setting is a minimalist, light-filled cafe with natural wood accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJMH9KLco967xyd8t5MSpRrF6oeghSKmcENnGt2RB7T3LHD_WUrKplfoP6U5QPqGegWmJ9WlYtT4IJO0koTl14kqmCkHoo1voq21W-G1Fd-uSsjr0hvcMxOnIBdkH9rG9XUGvWGdpPCTBnxFQYhV44te9J1wHTiZV6Ab3XdmZwrQnLAWES0f7p9LBQlDrEOcHHXxMmHDpVAHfhtpzV3RTGcnsVHyv7VF9OcA1_stf_tmp0N7am7wWR"/>
+</div>
+<div class="p-6 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-sm text-primary">Pavé de Pistache</h3>
+<span class="font-headline-sm text-caramel-rich">R$ 32,00</span>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Creme de pistache iraniano, praliné crocante e chocolate branco 32% cacau.</p>
+<div class="flex justify-end mt-4">
+<button class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center hover:bg-primary transition-colors active:scale-90 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden card-shadow group hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-[4/3] w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A delicate caramel and sea salt pavé dessert presented on a handcrafted ceramic plate. Golden, flowing caramel is shown dripping over layers of cream. The style is bright and sophisticated, using a high-key lighting setup that celebrates the warm tones of the caramel. The overall mood is indulgent and premium, reflecting a high-end confectionery brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY0JT-nkhz-kthXQGUaDTh_j5tiuwJevkLuIviT6S9mXdhBoRdrbQYVTlGzDoE9GQZC74W_Jyg8nV9XjdRw114E_jzfG_ncEIN9SFcJk3lreC9mSu4ajVOAjpyhIEY9hvkvT_5jOyKMUgUZl-Dn2ZZZy2n78ymX3FJUZXFD8H_h92d9Lz5JgT3p0irK5xlh1r6sEkd24zertKWvd6zQf4ad5qEEIVgsUOIHKnWGIqG78C6QEwxwaF_"/>
+</div>
+<div class="p-6 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-sm text-primary">Caramelo Salgado</h3>
+<span class="font-headline-sm text-caramel-rich">R$ 28,50</span>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Toffee de caramelo com flor de sal, mousse de chocolate meio amargo e biscoito de amêndoas.</p>
+<div class="flex justify-end mt-4">
+<button class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center hover:bg-primary transition-colors active:scale-90 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden card-shadow group hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-[4/3] w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A fresh and light red fruit pavé dessert with layers of mascarpone cream and bright red berry coulis. The image is captured in a bright, ethereal light with a shallow depth of field. Soft pink and cream tones dominate the palette, creating a romantic and sophisticated look. Sprigs of fresh mint and whole raspberries garnish the top of the perfectly layered dessert." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoWClEFDxziMkeuVUiSbfreXvaRIbZQEd6elSky9SEfzcrNmK_nL_O7o8xZ4aSHwNlrue3ohSfCo8Nw85h04xSU5YIlBWnDB-1Y7WNgpdC5-2B1umbm4GQvWLUiS1jLwbyHLlJF9yujnGfFdweFWP_ZFeALSztPEXI6Tp8jwbyYo3m7PihbAUVYd9fo9tHxHVqxQTDCDafSiW2WL8JTO5eBPtUcDmeIyUJdd2n-DVQ4RjxS5Kgbvsw"/>
+</div>
+<div class="p-6 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-sm text-primary">Frutas Vermelhas</h3>
+<span class="font-headline-sm text-caramel-rich">R$ 30,00</span>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2">Coulis de morangos e framboesas, creme de mascarpone leve e raspas de limão siciliano.</p>
+<div class="flex justify-end mt-4">
+<button class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center hover:bg-primary transition-colors active:scale-90 shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Cart Bottom Bar (Subtotal) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-background/90 backdrop-blur-xl border-t border-surface-variant/30 px-margin-mobile md:px-margin-desktop py-5 flex items-center justify-between shadow-[0_-10px_40px_rgba(74,49,45,0.08)]">
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="shopping_basket">shopping_basket</span>
+<span class="absolute -top-1 -right-1 bg-caramel-rich text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">2</span>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Subtotal</p>
+<p class="font-headline-sm text-primary leading-none">R$ 56,90</p>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 rounded-full font-label-md hover:bg-primary-container transition-all active:scale-95 shadow-lg flex items-center gap-2">
+            Ver Sacola
+            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-[60] flex justify-around items-center px-4 py-3 md:hidden bg-surface-container dark:bg-surface-container-highest shadow-lg rounded-t-xl">
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-sm">Cardápio</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-sm">Favoritos</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm">Pedidos</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm">Perfil</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8 bg-chocolate-dark text-cream-vanilla mt-20 mb-20 md:mb-0">
+<div class="flex flex-col items-center md:items-start gap-4">
+<h2 class="font-display-lg text-cream-vanilla">Atelier du Pavé</h2>
+<p class="font-body-md text-cream-vanilla/80 max-w-xs text-center md:text-left">© 2024 Atelier du Pavé. Artesanalmente doce. Transformando momentos em lembranças deliciosas.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-12">
+<a class="text-cream-vanilla/80 font-body-md hover:text-caramel-rich transition-colors" href="#">Nossa História</a>
+<a class="text-cream-vanilla/80 font-body-md hover:text-caramel-rich transition-colors" href="#">Unidades</a>
+<a class="text-cream-vanilla/80 font-body-md hover:text-caramel-rich transition-colors" href="#">Privacidade</a>
+<a class="text-cream-vanilla/80 font-body-md hover:text-caramel-rich transition-colors" href="#">Contato</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Scroll shadow for TopAppBar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Simple cart logic for UI feedback
+        const buttons = document.querySelectorAll('button[data-icon="add"]');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('span');
+                icon.textContent = 'check';
+                this.classList.replace('bg-primary-container', 'bg-pistachio-accent');
+                
+                setTimeout(() => {
+                    icon.textContent = 'add';
+                    this.classList.replace('bg-pistachio-accent', 'bg-primary-container');
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

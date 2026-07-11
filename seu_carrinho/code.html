@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carrinho - Atelier du Pavé</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#2b1613",
+                    "tertiary-fixed": "#ffdcbd",
+                    "on-secondary-fixed": "#2c160d",
+                    "chocolate-dark": "#2D1D1B",
+                    "on-secondary-container": "#795a4d",
+                    "tertiary-fixed-dim": "#e1c1a2",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#5b403c",
+                    "on-secondary-fixed-variant": "#5c4035",
+                    "primary": "#321c19",
+                    "surface-dim": "#ded9d4",
+                    "surface-variant": "#e6e2dc",
+                    "caramel-rich": "#B58463",
+                    "cream-vanilla": "#FDFBF7",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#f2ede7",
+                    "on-surface-variant": "#504442",
+                    "on-secondary": "#ffffff",
+                    "background": "#fef9f3",
+                    "surface": "#fef9f3",
+                    "pistachio-accent": "#A3B18A",
+                    "primary-fixed": "#ffdad4",
+                    "on-tertiary-container": "#b99b7e",
+                    "secondary-container": "#fed4c4",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1d1b18",
+                    "primary-container": "#4a312d",
+                    "outline-variant": "#d4c3c0",
+                    "surface-container-high": "#ece7e2",
+                    "primary-fixed-dim": "#e4beb8",
+                    "outline": "#827472",
+                    "on-surface": "#1d1b18",
+                    "inverse-primary": "#e4beb8",
+                    "inverse-on-surface": "#f5f0ea",
+                    "surface-container-low": "#f8f3ed",
+                    "surface-container-highest": "#e6e2dc",
+                    "secondary": "#76574b",
+                    "on-primary-container": "#bb9893",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#301e0a",
+                    "secondary-fixed-dim": "#e6beaf",
+                    "on-tertiary-fixed": "#291805",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#48331d",
+                    "surface-bright": "#fef9f3",
+                    "inverse-surface": "#32302c",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#755753",
+                    "on-tertiary-fixed-variant": "#59422b",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "12px",
+                    "2xl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Outfit"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Outfit"],
+                    "label-sm": ["Outfit"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Outfit"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .cart-item-shadow {
+            shadow: 0px 10px 30px rgba(74, 49, 45, 0.04);
+        }
+        body {
+            background-color: #fef9f3;
+            color: #1d1b18;
+            -webkit-font-smoothing: antialiased;
+        }
+        .transition-soft {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95" onclick="history.back()">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary tracking-tight">Atelier du Pavé</h1>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity md:block hidden">search</button>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity">shopping_bag</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-16">
+<!-- Cart State: Active (Toggle hidden for testing empty state) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12" id="cart-active">
+<!-- Items Column -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex items-baseline justify-between mb-8">
+<h2 class="font-headline-md text-headline-md text-primary">Meu Carrinho</h2>
+<span class="text-on-surface-variant font-label-md">3 itens</span>
+</div>
+<!-- Cart Item 1 -->
+<div class="group flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-surface-container-lowest rounded-2xl shadow-[0_10px_30px_rgba(74,49,45,0.04)] hover:shadow-lg transition-soft border border-surface-variant/30">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, high-detail macro shot of a handcrafted pavé dessert with layers of creamy vanilla, rich chocolate, and delicate biscuit, presented on a minimalist ceramic plate. The lighting is warm and natural, emphasizing the soft, velvety texture and glossy finish of the caramel drizzle. The overall mood is luxurious and inviting, fitting a premium pâtisserie brand's aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9cGQT3NRtY2M1QXmFxyY2KJJZIj9txeFYLvCoULUBnqHrKshKFgkZQ51KWm5Q96kh4vC5z8CJvBUMm9wnovQ6VmaDYoeUorLEkuzvIJOgfaWvDJZm9u3DrtFZVo5jI2Qc_4_TDBu3-K_8Nz3IdJ1p6hF4GxIboFa-vqoVq93BJCUEV15oVT6qAQf0XJ-kfKlSHs-vaTGA5XTKuqR6ifkcl_n1qiZC6dQ0Zz2P9jVcMJwPOj0iYduO"/>
+</div>
+<div class="flex-grow flex flex-col justify-between py-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Pavé de Caramelo Salgado</h3>
+<p class="text-on-surface-variant text-body-md mt-1">Chocolate belga 70%, flor de sal</p>
+</div>
+<p class="font-bold text-primary text-body-lg">R$ 32,90</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center bg-surface-container rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-white rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="px-4 font-label-md text-primary">1</span>
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-white rounded-full transition-colors active:scale-90">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<button class="text-error flex items-center gap-1 opacity-70 hover:opacity-100 transition-opacity font-label-md" onclick="this.closest('.group').remove()">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+<span class="hidden md:inline">Remover</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="group flex items-center gap-4 md:gap-6 p-4 md:p-6 bg-surface-container-lowest rounded-2xl shadow-[0_10px_30px_rgba(74,49,45,0.04)] hover:shadow-lg transition-soft border border-surface-variant/30">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of a pistachio and raspberry pavé cake, showing vibrant green pistachio cream and deep red raspberry coulis layers. The dessert is illuminated by soft, side-lit morning light that highlights the creamy textures and the crunchy nut topping. The background is a soft-focus cream-colored marble, maintaining a high-end, clean, and artisanal atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCmqiNxgpQtVhew1Ojt2c9jOrEJkzHb1k5fv6jZ3RZCwHENiFTDvp7Er6aRZIvMjMC6HP-kasi5HGAEZK4LtHp37crveQ7MD74_lsxBh0AbxCYJ-IYmWRWCy3k-avm3JomRY-8OeRlPtve4Mws-ZcS2JC1alG0ZVPPy5V-4It53aM_K7yDLrCpgLL_PepMnr2ypcbFpDZD1gyDyG23TURWUHihAUs95sYGvFcGw8ahyfpMPTFaxOYB"/>
+</div>
+<div class="flex-grow flex flex-col justify-between py-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Pavé de Pistache e Frutas Vermelhas</h3>
+<p class="text-on-surface-variant text-body-md mt-1">Pistache iraniano, coulis de framboesa</p>
+</div>
+<p class="font-bold text-primary text-body-lg">R$ 38,50</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<div class="flex items-center bg-surface-container rounded-full px-2 py-1">
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="px-4 font-label-md text-primary">2</span>
+<button class="w-8 h-8 flex items-center justify-center text-primary hover:bg-white rounded-full transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<button class="text-error flex items-center gap-1 opacity-70 hover:opacity-100 transition-opacity font-label-md" onclick="this.closest('.group').remove()">
+<span class="material-symbols-outlined text-[20px]">delete_outline</span>
+<span class="hidden md:inline">Remover</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Column -->
+<div class="lg:col-span-4">
+<div class="bg-primary-container text-on-primary-container p-8 rounded-2xl sticky top-28 shadow-xl">
+<h3 class="font-headline-sm text-headline-sm mb-6 text-cream-vanilla">Resumo do Pedido</h3>
+<div class="space-y-4 font-body-md border-b border-on-primary-container/20 pb-6">
+<div class="flex justify-between items-center">
+<span class="text-cream-vanilla/70">Subtotal</span>
+<span class="text-cream-vanilla">R$ 109,90</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-cream-vanilla/70">Taxa de Entrega</span>
+<span class="text-cream-vanilla">R$ 12,00</span>
+</div>
+<div class="flex justify-between items-center text-pistachio-accent">
+<span>Desconto Especial</span>
+<span>- R$ 5,00</span>
+</div>
+</div>
+<div class="pt-6 mb-8">
+<div class="flex justify-between items-center">
+<span class="text-headline-sm text-cream-vanilla font-headline-sm">Total</span>
+<span class="text-headline-sm text-cream-vanilla font-bold">R$ 116,90</span>
+</div>
+</div>
+<button class="w-full bg-cream-vanilla text-primary-container py-4 rounded-xl font-label-md text-label-md hover:bg-caramel-rich hover:text-white transition-soft active:scale-95 flex justify-center items-center gap-2 group">
+                        Finalizar Pedido
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<p class="text-center text-cream-vanilla/50 text-label-sm mt-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                        Pagamento 100% Seguro
+                    </p>
+</div>
+</div>
+</div>
+<!-- Cart State: Empty (Hidden by default) -->
+<div class="hidden py-20 flex flex-col items-center text-center" id="cart-empty">
+<div class="w-64 h-64 mb-8 relative">
+<div class="absolute inset-0 bg-primary-container/5 rounded-full scale-125 blur-3xl"></div>
+<img class="w-full h-full object-contain relative z-10" data-alt="A soft, poetic illustration of an empty porcelain cake stand in a sunlit french kitchen. The lighting is ethereal and warm, with dust motes dancing in the light. In the background, there is a hint of a copper whisk and a linen towel. The aesthetic is clean, sophisticated, and slightly nostalgic, using a palette of creams, warm wood, and soft browns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKVY7kUAgUDaqYfJH4QYbOffIm2oQnuR7GvoFCXNH6qHHo6yGzrSY1hR_FGs-mJFNdhfjulYj-z3ZAaRW1-15vlckbC2UrjXpNTVDkHrvHJegoyHTUI3U4LTzA59McQD3LiRjdNgTh-Kc81roqIsJdz63n6YvM5g1Lz5pozEsPYo4qfDjgR-L5skTmNHenIEIUxZHg0Z2nqBfeiY96BkBKgBT55s0wkRp72EkCW1uCN0tP0aT7W4Lw"/>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Seu carrinho está vazio</h2>
+<p class="text-on-surface-variant text-body-lg max-w-md mx-auto mb-10">
+                Parece que você ainda não escolheu suas doçuras artesanais. Que tal explorar nosso cardápio de hoje?
+            </p>
+<button class="bg-primary-container text-white px-10 py-4 rounded-xl font-label-md hover:bg-primary transition-soft active:scale-95 shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined">restaurant_menu</span>
+                Ver Cardápio
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-mobile md:px-margin-desktop bg-chocolate-dark text-cream-vanilla flex flex-col md:flex-row justify-between items-center gap-8 mt-20">
+<div class="text-center md:text-left">
+<h2 class="font-display-lg text-display-lg text-cream-vanilla mb-2">Atelier du Pavé</h2>
+<p class="text-cream-vanilla/60 font-body-md italic">Artesanalmente doce desde 1992.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="text-cream-vanilla/80 hover:text-caramel-rich transition-colors font-body-md" href="#">Nossa História</a>
+<a class="text-cream-vanilla/80 hover:text-caramel-rich transition-colors font-body-md" href="#">Unidades</a>
+<a class="text-cream-vanilla/80 hover:text-caramel-rich transition-colors font-body-md" href="#">Privacidade</a>
+<a class="text-cream-vanilla/80 hover:text-caramel-rich transition-colors font-body-md" href="#">Contato</a>
+</div>
+<p class="text-cream-vanilla/40 text-label-sm md:text-right">
+            © 2024 Atelier du Pavé. Todos os direitos reservados.
+        </p>
+</footer>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_20px_0_rgba(74,49,45,0.06)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-label-sm text-label-sm mt-1">Cardápio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm text-label-sm mt-1">Favoritos</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-5 py-2 active:scale-90 transition-all shadow-md" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-sm text-label-sm mt-1">Pedidos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-primary-container/20 p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Perfil</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Toggle Empty State for Demo
+        // In a real app, this logic would be driven by the actual cart length
+        function toggleCartState() {
+            const active = document.getElementById('cart-active');
+            const empty = document.getElementById('cart-empty');
+            
+            // Check if any cart items exist
+            const items = active.querySelectorAll('.group');
+            if (items.length === 0) {
+                active.classList.add('hidden');
+                empty.classList.remove('hidden');
+                empty.classList.add('animate-fadeIn');
+            }
+        }
+
+        // Add event listener to delete buttons for demo purposes
+        document.querySelectorAll('button.text-error').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(toggleCartState, 300);
+            });
+        });
+
+        // Simple fadeIn animation for empty state
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fadeIn {
+                animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body></html>
